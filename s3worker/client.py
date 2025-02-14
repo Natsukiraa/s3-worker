@@ -19,7 +19,7 @@ def get_client() -> BaseClient:
         aws_secret_access_key=settings.aws_secret_access_key,
         region_name=settings.aws_region_name
     )
-    client = session.client('s3')
+    client = session.client('s3', endpoint_url=settings.s3_endpoint_url)
 
     return client
 
